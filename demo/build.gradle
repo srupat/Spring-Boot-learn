@@ -26,7 +26,23 @@ tasks.named('test') {
 }
 
 tasks.named("bootJar") {
-	mainClass = 'com.example.demo.securingweb.SecuringWebApplication'
+	mainClass = 'com.example.securingweb.SecuringWebApplication'
 }
+
+tasks.register("bootRunDev") {
+    group = "application"
+    description = "Runs the Spring Boot application with the dev profile"
+    doFirst {
+        tasks.bootRun.configure {
+            systemProperty("spring.profiles.active", "dev")
+        }
+    }
+    finalizedBy("bootRun")
+}
+
+bootRun {
+    mainClassName = 'com.example.securingweb.SecuringWebApplication' // or 'com.example.securingweb.DemoApplication'
+}
+
 
 
