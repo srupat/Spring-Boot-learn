@@ -1,4 +1,4 @@
-package com.example.demo.securingweb;
+package com.example.securingweb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
